@@ -7,11 +7,7 @@ use package {user.tex_packages}:
     insert("\\usepackage{{{tex_packages}}}")
 use package bib latex:
     insert("\\usepackage[style=authoryear]{{biblatex}}")
-begin {user.tex_environments}:
-    insert("\\begin{{{tex_environments}}}")
-    key(enter:2)
-    insert("\\end{{{tex_environments}}}")
-    key(up)
+begin {user.tex_environments}: user.latex_insert_environment(tex_environments)
 insert {user.tex_commands}:
     insert("\\{tex_commands}{{}}")
     key(left)

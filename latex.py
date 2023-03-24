@@ -1,4 +1,4 @@
-from talon import Context, Module
+from talon import Context, Module, actions
 
 mod = Module()
 ctx = Context()
@@ -175,6 +175,15 @@ ctx.lists["user.greek_letters"] = {
     "big sigh": "Psi",
     "big omega": "Omega",
 }
+
+@mod.action_class
+class Actions:
+    def latex_insert_environment(name: str):
+        """Insert a latex environment"""
+        actions.insert(f"\\begin{{{name}}}")
+        actions.key("enter:2")
+        actions.insert(f"\\end{{{name}}}")
+        actions.key("up")
 
 mod.list("tex_templates", desc="TeX templates")
 ctx.lists["user.tex_templates"] = {

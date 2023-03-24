@@ -10,10 +10,6 @@ mod.list("tex_symbols", desc="TeX mathematical symbols")
 ctx.lists["user.tex_symbols"] = {
     "binomial": "binom",
     # operators
-    "product": "prod",
-    "integral": "int",
-    "double integral": "iint",
-    "triple integral": "iiint",
     "times": "times",
     "divide": "div",
     "C dot": "cdot",
