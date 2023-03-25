@@ -10,7 +10,8 @@ greek {user.greek_letters}: user.maths_greek_letter(greek_letters)
 {user.tex_symbols}: user.maths_tex_symbol(tex_symbols)
 
 # Matrices
-matrix <number> by <number>: user.maths_matrix(number_1, number_2)
+[{user.matrix_type}] matrix <number_small> by <number_small>:
+    user.maths_matrix(number_small_1, number_small_2, matrix_type or "matrix")
 
 # Fractions
 fraction: user.maths_fraction()

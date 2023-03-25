@@ -176,6 +176,14 @@ ctx.lists["user.greek_letters"] = {
     "big omega": "Omega",
 }
 
+ctx.lists["user.matrix_type"] = {
+    "curly": "Bmatrix",
+    "round": "pmatrix",
+    "square": "bmatrix",
+    "pipe": "vmatrix",
+    "double pipe": "Vmatrix",
+}
+
 @mod.action_class
 class Actions:
     def latex_insert_environment(name: str):
@@ -184,6 +192,21 @@ class Actions:
         actions.key("enter:2")
         actions.insert(f"\\end{{{name}}}")
         actions.key("up")
+
+@ctx.action_class("user")
+class Actions:
+    def maths_greek_letter(letter: str):
+        actions.insert(f"\\{letter} ")
+
+    def maths_tex_symbol(symbol: str):
+        actions.insert(f"\\{symbol} ")
+
+    def maths_begin_superscript():
+        actions.user.insert_between("^{", "}")
+
+    def maths_begin_subscript():
+        actions.user.insert_between("_{", "}")
+
 
 mod.list("tex_templates", desc="TeX templates")
 ctx.lists["user.tex_templates"] = {

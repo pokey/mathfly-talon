@@ -5,9 +5,9 @@ tag(): user.maths
 
 {user.tex_environments} wrap <user.cursorless_target>:
     user.latex_wrap_with_environment(tex_environments, cursorless_target)
-upper wrap <user.cursorless_target>:
+place <user.cursorless_target> over:
     user.cursorless_wrap_with_custom_snippet(user.fraction_snippet(), cursorless_target, "numerator")
-lower wrap <user.cursorless_target>:
+place <user.cursorless_target> under:
     user.cursorless_wrap_with_custom_snippet(user.fraction_snippet(), cursorless_target, "denominator")
 
 <user.big_operator_snippet> wrap <user.cursorless_target>:
