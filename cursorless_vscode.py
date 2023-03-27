@@ -40,7 +40,7 @@ def get_environment_snippet(name: str):
 class Actions:
     def latex_wrap_with_environment(name: str, target: dict):
         """Insert a latex environment"""
-        actions.user.cursorless_wrap_with_custom_snippet(
+        actions.user.cursorless_wrap_with_snippet(
             get_environment_snippet(name), target, "body"
         )
 
@@ -52,14 +52,14 @@ class Actions:
 @ctx.action_class("user")
 class Actions:
     def latex_insert_environment(name: str):
-        actions.user.cursorless_insert_custom_snippet(get_environment_snippet(name))
+        actions.user.cursorless_insert_snippet(get_environment_snippet(name))
 
     def maths_matrix(rows: int, columns: int, matrix_type: str):
         matrix_snippet = get_matrix_snippet(rows, columns, matrix_type)
-        actions.user.cursorless_insert_custom_snippet(matrix_snippet)
+        actions.user.cursorless_insert_snippet(matrix_snippet)
 
     def maths_fraction():
-        actions.user.cursorless_insert_custom_snippet(actions.user.fraction_snippet())
+        actions.user.cursorless_insert_snippet(actions.user.fraction_snippet())
 
 
 def get_matrix_snippet(rows: int, columns: int, matrix_type: str):

@@ -6,14 +6,13 @@ tag(): user.maths
 {user.tex_environments} wrap <user.cursorless_target>:
     user.latex_wrap_with_environment(tex_environments, cursorless_target)
 place <user.cursorless_target> over:
-    user.cursorless_wrap_with_custom_snippet(user.fraction_snippet(), cursorless_target, "numerator")
+    user.cursorless_wrap_with_snippet(user.fraction_snippet(), cursorless_target, "numerator")
 place <user.cursorless_target> under:
-    user.cursorless_wrap_with_custom_snippet(user.fraction_snippet(), cursorless_target, "denominator")
+    user.cursorless_wrap_with_snippet(user.fraction_snippet(), cursorless_target, "denominator")
 
 <user.big_operator_snippet> wrap <user.cursorless_target>:
-    user.cursorless_wrap_with_custom_snippet(big_operator_snippet, cursorless_target, "body")
-<user.big_operator_snippet>:
-    user.cursorless_insert_custom_snippet(big_operator_snippet)
+    user.cursorless_wrap_with_snippet(big_operator_snippet, cursorless_target, "body")
+<user.big_operator_snippet>: user.cursorless_insert_snippet(big_operator_snippet)
 
 # TODO: Implement the stuff below this line
 
@@ -34,7 +33,7 @@ absolute: user.lyx_control_sequence("m", "|")
 accent hat: user.lyx_control_sequence("m", "h")
 accent tilde: user.lyx_control_sequence("m", "&")
 accent dot: user.lyx_control_sequence("m", ".")
-accent double dot: user.lyx_control_sequence("m", "\"")
+accent double dot: user.lyx_control_sequence("m", '"')
 accent bar: user.lyx_control_sequence("m", "-")
 accent vector: user.lyx_control_sequence("m", "v")
 
@@ -77,7 +76,7 @@ text bold: "\\mathbf "
 text sans serif: "\\mathsf "
 text italic: "\\mathit "
 text typewriter: "\\mathtt "
-text (beebee|blackboard bold | blackboard): "\\mathbb "
+text (beebee | blackboard bold | blackboard): "\\mathbb "
 
 #
 # Program control
