@@ -6,9 +6,9 @@ app: LyX for Windows
 tag(): user.maths
 
 add matrix row: user.lyx_control_sequence("m", "w i")
-(delete | remove) matrix row: user.lyx_control_sequence("m", "w d")
+(chunk | remove) matrix row: user.lyx_control_sequence("m", "w d")
 add matrix column: user.lyx_control_sequence("m", "c i")
-(delete | remove) matrix column: user.lyx_control_sequence("m", "c d")
+(chunk | remove) matrix column: user.lyx_control_sequence("m", "c d")
 
 square root: user.lyx_control_sequence("m", "s")
 generic root: user.lyx_control_sequence("m", "r")
@@ -85,7 +85,7 @@ text (beebee|blackboard bold | blackboard): "\\mathbb "
 new file: key(ctrl-n)
 open file: key(ctrl-o)
 save as: key(ctrl-shift-s)
-(math | maths) mode: user.lyx_control_sequence("m", "m")
+mat (mode | mote | moat): user.lyx_control_sequence("m", "m")
 display mode: key(ctrl-shift-m)
 normal mode: user.lyx_control_sequence("p", "s")
 view PDF: key(ctrl-r)

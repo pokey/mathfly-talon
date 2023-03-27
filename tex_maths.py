@@ -8,8 +8,13 @@ mod.list("greek_letters", desc="TeX greek letters")
 mod.list("tex_symbols", desc="TeX mathematical symbols")
 
 ctx.lists["user.tex_symbols"] = {
+    # second quantization
+    "ket": "ket",
+    "bra": "bra",
+    "matrix element": "mel",
     "binomial": "binom",
     # operators
+    "summation": "sum",
     "product": "prod",
     "integral": "int",
     "double integral": "iint",
@@ -90,7 +95,7 @@ ctx.lists["user.tex_symbols"] = {
     "vertical dots": "vdots",
     # sets
     "empty set": "emptyset",
-    "subset": "subset",
+    "submarine set": "subset",
     "superset": "supset",
     "strict subset": "subsetneq",
     "strict superset": "supsetneq",

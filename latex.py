@@ -21,6 +21,7 @@ ctx.lists["user.tex_document_classes"] = {
 mod.list("tex_packages", desc="TeX packages")
 ctx.lists["user.tex_packages"] = {
     "AMS math": "amsmath",
+    "physics": "physics",
     # "bib latex"   = ["[style=authoryear]", "biblatex"]
     "colour": "color",
     "geometry": "geometry",
@@ -222,6 +223,18 @@ ctx.lists["user.tex_templates"] = {
 \includegraphics[width=0.4\textwidth]{}
 \caption{}
 \end{wrapfigure}
+''',
+# ------------------------------------
+    "physics": r'''
+\documentclass[12pt]{article}
+\usepackage{physics}
+\title{FCI Questions}
+\author{Patryk Kozlowski}
+\date{\today} %% Change "\today" by another date manually
+\begin{document}
+\maketitle
+
+\end{document}
 ''',
 # ------------------------------------
     "table": r'''

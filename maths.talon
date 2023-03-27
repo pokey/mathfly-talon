@@ -6,7 +6,7 @@ show (math | maths) help: user.maths_help_show()
 hide maths help: user.maths_help_hide()
 
 # Basic symbols
-greek {user.greek_letters}: user.maths_greek_letter(greek_letters)
+(greek | creek) {user.greek_letters}: user.maths_greek_letter(greek_letters)
 {user.tex_symbols}: user.maths_tex_symbol(tex_symbols)
 
 # Matrices
