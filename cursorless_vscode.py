@@ -49,27 +49,13 @@ class Actions:
         """Get the fraction snippet"""
         return "\\frac{$numerator}{$denominator}"
 
-    def identity_matrix_snippet(size: int, bracket_type: str) -> str:
+    def matrix_snippet(
+        rows: int, columns: int, bracket_type: str, matrix_type: str
+    ) -> str:
         """Get the identity matrix snippet"""
         return get_matrix_snippet(
-            size, size, bracket_type, identity_matrix_get_cell_content
+            rows, columns, bracket_type, cell_content_getter[matrix_type]
         )
-
-    def scalar_matrix_snippet(size: int, bracket_type: str) -> str:
-        """Get the scalar matrix snippet"""
-        return get_matrix_snippet(
-            size, size, bracket_type, scalar_matrix_get_cell_content
-        )
-
-    def diagonal_matrix_snippet(rows: int, columns: int, bracket_type: str) -> str:
-        """Get the diagonal matrix snippet"""
-        return get_matrix_snippet(
-            rows, columns, bracket_type, diagonal_matrix_get_cell_content
-        )
-
-    def full_matrix_snippet(rows: int, columns: int, bracket_type: str) -> str:
-        """Get the full matrix snippet"""
-        return get_matrix_snippet(rows, columns, bracket_type, default_get_cell_content)
 
 
 @ctx.action_class("user")
@@ -77,8 +63,10 @@ class Actions:
     def latex_insert_environment(name: str):
         actions.user.cursorless_insert_snippet(get_environment_snippet(name))
 
-    def maths_matrix(rows: int, columns: int, bracket_type: str):
-        matrix_snippet = actions.user.full_matrix_snippet(rows, columns, bracket_type)
+    def maths_matrix(rows: int, columns: int, bracket_type: str, matrix_type: str):
+        matrix_snippet = actions.user.matrix_snippet(
+            rows, columns, bracket_type, matrix_type
+        )
         actions.user.cursorless_insert_snippet(matrix_snippet)
 
     def maths_fraction():
@@ -99,6 +87,14 @@ def diagonal_matrix_get_cell_content(row_idx: int, column_idx: int) -> str:
 
 def default_get_cell_content(row_idx: int, column_idx: int) -> str:
     return f"$cell_{row_idx}_{column_idx}"
+
+
+cell_content_getter = {
+    "identity": identity_matrix_get_cell_content,
+    "scalar": scalar_matrix_get_cell_content,
+    "diagonal": diagonal_matrix_get_cell_content,
+    "full": default_get_cell_content,
+}
 
 
 def get_matrix_snippet(

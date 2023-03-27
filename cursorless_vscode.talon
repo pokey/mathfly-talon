@@ -16,18 +16,8 @@ place <user.cursorless_target> under:
 <user.big_operator_snippet>: user.cursorless_insert_snippet(big_operator_snippet)
 
 # Matrices
-[{user.bracket_type}] identity matrix <number_small>:
-    snippet = user.identity_matrix_snippet(number_small, bracket_type or "bmatrix")
-    user.cursorless_insert_snippet(snippet)
-[{user.bracket_type}] scaler matrix <number_small>:
-    snippet = user.scalar_matrix_snippet(number_small, bracket_type or "bmatrix")
-    user.cursorless_insert_snippet(snippet)
-[{user.bracket_type}] diagonal matrix <number_small> [by <number_small>]:
-    snippet = user.diagonal_matrix_snippet(number_small, number_small_2 or number_small, bracket_type or "bmatrix")
-    user.cursorless_insert_snippet(snippet)
-
-[{user.bracket_type}] scaler matrix <number_small> wrap <user.cursorless_target>:
-    snippet = user.scalar_matrix_snippet(number_small, bracket_type or "bmatrix")
+[{user.bracket_type}] scaler matrix <number_small> [by <number_small>] wrap <user.cursorless_target>:
+    snippet = user.matrix_snippet(number_small, number_small_2 or number_small, bracket_type or "bmatrix", "scalar")
     user.cursorless_wrap_with_snippet(snippet, cursorless_target, "constant")
 
 # TODO: Implement the stuff below this line
