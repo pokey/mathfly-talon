@@ -176,7 +176,8 @@ ctx.lists["user.greek_letters"] = {
     "big omega": "Omega",
 }
 
-ctx.lists["user.matrix_type"] = {
+ctx.lists["user.bracket_type"] = {
+    "nude": "matrix",
     "curly": "Bmatrix",
     "round": "pmatrix",
     "square": "bmatrix",

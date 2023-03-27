@@ -20,7 +20,7 @@ ctx = Context()
 
 mod.tag("maths")
 
-mod.list("matrix_type", "Matrix types, eg parenthesized, brackets, etc.")
+mod.list("bracket_type", "Matrix types, eg parenthesized, brackets, etc.")
 
 mod.list("maths_fractions", "Fractions")
 ctx.lists["user.maths_fractions"] = {
@@ -37,7 +37,7 @@ class Actions:
     def maths_tex_symbol(symbol: str):
         """Insert a TeX symbol (one of those in the tex_symbols list)"""
 
-    def maths_matrix(rows: int, columns: int, matrix_type: str):
+    def maths_matrix(rows: int, columns: int, bracket_type: str):
         """Insert a matrix (rows x columns)"""
 
     def maths_fraction():
