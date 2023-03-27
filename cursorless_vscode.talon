@@ -27,7 +27,7 @@ place <user.cursorless_target> under:
     user.cursorless_insert_snippet(snippet)
 
 [{user.bracket_type}] scaler matrix <number_small> wrap <user.cursorless_target>:
-    snippet = user.matrix_snippet(number_small, bracket_type or "bmatrix", "scalar")
+    snippet = user.scalar_matrix_snippet(number_small, bracket_type or "bmatrix")
     user.cursorless_wrap_with_snippet(snippet, cursorless_target, "constant")
 
 # TODO: Implement the stuff below this line
