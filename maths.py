@@ -1,5 +1,5 @@
 from talon import Context, Module, actions
-from typing import NamedTuple
+from typing import NamedTuple, Optional
 
 fractions = {
     "half": "2",
@@ -20,6 +20,16 @@ ctx = Context()
 
 mod.tag("maths")
 
+mod.list("bracket_type", "Matrix bracket types, eg parenthesized, brackets, etc.")
+mod.list("matrix_type", "Matrix types, eg full, diagonal, etc.")
+
+ctx.lists["user.matrix_type"] = {
+    "identity": "identity",
+    "scaler": "scalar",
+    "diagonal": "diagonal",
+    "full": "full",
+}
+
 mod.list("maths_fractions", "Fractions")
 ctx.lists["user.maths_fractions"] = {
     **fractions,
@@ -34,8 +44,8 @@ class Actions:
         actions.insert("\\" + str(letter))
     def maths_tex_symbol(symbol: str):
         """Insert a TeX symbol (one of those in the tex_symbols list)"""
-        actions.insert("\\" + str(symbol))
-    def maths_matrix(rows: int, columns: int):
+
+    def maths_matrix(rows: int, columns: int, bracket_type: str, matrix_type: str):
         """Insert a matrix (rows x columns)"""
 
     def maths_fraction():

@@ -14,11 +14,6 @@ ctx.lists["user.tex_symbols"] = {
     "matrix element": "mel",
     "binomial": "binom",
     # operators
-    "summation": "sum",
-    "product": "prod",
-    "integral": "int",
-    "double integral": "iint",
-    "triple integral": "iiint",
     "times": "times",
     "divide": "div",
     "C dot": "cdot",
