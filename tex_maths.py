@@ -3,15 +3,10 @@ from talon import Context, Module
 mod = Module()
 ctx = Context()
 
-# Defined in sn55, lyx.py
 mod.list("greek_letters", desc="TeX greek letters")
 mod.list("tex_symbols", desc="TeX mathematical symbols")
 
 ctx.lists["user.tex_symbols"] = {
-    # second quantization
-    "ket": "ket",
-    "bra": "bra",
-    "matrix element": "mel",
     "binomial": "binom",
     # operators
     "times": "times",

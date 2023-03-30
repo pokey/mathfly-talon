@@ -198,10 +198,10 @@ class Actions:
 @ctx.action_class("user")
 class Actions:
     def maths_greek_letter(letter: str):
-        actions.insert(f"\\{letter} ")
+        actions.insert(f"\\{letter}")
 
     def maths_tex_symbol(symbol: str):
-        actions.insert(f"\\{symbol} ")
+        actions.insert(f"\\{symbol}")
 
     def maths_begin_superscript():
         actions.user.insert_between("^{", "}")

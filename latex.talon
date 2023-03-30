@@ -10,8 +10,9 @@ use package bib latex:
 
 begin {user.tex_environments}: user.latex_insert_environment(tex_environments)
 insert {user.tex_commands}: user.insert_between("\\{tex_commands}{{", "}}")
-insert {user.tex_commands_noarg}: user.cursorless_insert_snippet("\\{tex_commands_noarg} ")
-greek {user.greek_letters}: user.cursorless_insert_snippet("\\{greek_letters} ")
-symbol {user.tex_symbols}: user.cursorless_insert_snippet("\\{tex_symbols} ")
+insert {user.tex_commands_noarg}: user.cursorless_insert_snippet("\\{tex_commands_noarg}")
+greek {user.greek_letters}: user.cursorless_insert_snippet("\\{greek_letters}")
+symbol {user.tex_symbols}: user.cursorless_insert_snippet("\\{tex_symbols}")
 
 template {user.tex_templates}: user.paste(tex_templates)
+    i

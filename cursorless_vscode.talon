@@ -49,8 +49,8 @@ limit:
     key(down)
 label above: "\\overset "
 label below: "\\underset "
-prime: user.maths_superscript("\\prime ")
-degrees: user.maths_superscript("\\degrees ")
+prime: user.maths_superscript("\\prime")
+degrees: user.maths_superscript("\\degrees")
 exponential:
     insert("\\exp ")
     user.lyx_control_sequence("m", "(")

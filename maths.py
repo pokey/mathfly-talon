@@ -44,12 +44,7 @@ class Actions:
         actions.insert("\\" + str(letter))
     def maths_tex_symbol(symbol: str):
         """Insert a TeX symbol (one of those in the tex_symbols list)"""
-
-    def maths_matrix(rows: int, columns: int, bracket_type: str, matrix_type: str):
-        """Insert a matrix (rows x columns)"""
-
-    def maths_fraction():
-        """Begin a fraction"""
+        actions.insert("\\" + str(symbol))
 
     def maths_begin_subscript():
         """Begin subscript"""

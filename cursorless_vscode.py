@@ -13,7 +13,7 @@ title: /\.tex/
 mod.list("math_big_operator", "Big operators such as sum, product, integral, etc.")
 
 ctx.lists["user.math_big_operator"] = {
-    "some": "sum",
+    "summation": "sum",
     "product": "prod",
     "integral": "int",
     "double integral": "iint",
