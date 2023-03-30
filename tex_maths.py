@@ -3,17 +3,12 @@ from talon import Context, Module
 mod = Module()
 ctx = Context()
 
-# Defined in sn55, lyx.py
 mod.list("greek_letters", desc="TeX greek letters")
 mod.list("tex_symbols", desc="TeX mathematical symbols")
 
 ctx.lists["user.tex_symbols"] = {
     "binomial": "binom",
     # operators
-    "product": "prod",
-    "integral": "int",
-    "double integral": "iint",
-    "triple integral": "iiint",
     "times": "times",
     "divide": "div",
     "C dot": "cdot",
@@ -90,7 +85,7 @@ ctx.lists["user.tex_symbols"] = {
     "vertical dots": "vdots",
     # sets
     "empty set": "emptyset",
-    "subset": "subset",
+    "submarine set": "subset",
     "superset": "supset",
     "strict subset": "subsetneq",
     "strict superset": "supsetneq",

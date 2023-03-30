@@ -6,11 +6,12 @@ show (math | maths) help: user.maths_help_show()
 hide maths help: user.maths_help_hide()
 
 # Basic symbols
-greek {user.greek_letters}: user.maths_greek_letter(greek_letters)
+(greek | creek) {user.greek_letters}: user.maths_greek_letter(greek_letters)
 {user.tex_symbols}: user.maths_tex_symbol(tex_symbols)
 
 # Matrices
-matrix <number> by <number>: user.maths_matrix(number_1, number_2)
+[{user.bracket_type}] [{user.matrix_type}] matrix <number_small> [by <number_small>]:
+    user.maths_matrix(number_small, number_small_2 or number_small, bracket_type or "bmatrix", matrix_type or "full")
 
 # Fractions
 fraction: user.maths_fraction()

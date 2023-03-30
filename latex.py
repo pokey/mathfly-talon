@@ -1,4 +1,4 @@
-from talon import Context, Module
+from talon import Context, Module, actions
 
 mod = Module()
 ctx = Context()
@@ -21,6 +21,7 @@ ctx.lists["user.tex_document_classes"] = {
 mod.list("tex_packages", desc="TeX packages")
 ctx.lists["user.tex_packages"] = {
     "AMS math": "amsmath",
+    "physics": "physics",
     # "bib latex"   = ["[style=authoryear]", "biblatex"]
     "colour": "color",
     "geometry": "geometry",
@@ -176,6 +177,39 @@ ctx.lists["user.greek_letters"] = {
     "big omega": "Omega",
 }
 
+ctx.lists["user.bracket_type"] = {
+    "nude": "matrix",
+    "curly": "Bmatrix",
+    "round": "pmatrix",
+    "square": "bmatrix",
+    "pipe": "vmatrix",
+    "double pipe": "Vmatrix",
+}
+
+@mod.action_class
+class Actions:
+    def latex_insert_environment(name: str):
+        """Insert a latex environment"""
+        actions.insert(f"\\begin{{{name}}}")
+        actions.key("enter:2")
+        actions.insert(f"\\end{{{name}}}")
+        actions.key("up")
+
+@ctx.action_class("user")
+class Actions:
+    def maths_greek_letter(letter: str):
+        actions.insert(f"\\{letter}")
+
+    def maths_tex_symbol(symbol: str):
+        actions.insert(f"\\{symbol}")
+
+    def maths_begin_superscript():
+        actions.user.insert_between("^{", "}")
+
+    def maths_begin_subscript():
+        actions.user.insert_between("_{", "}")
+
+
 mod.list("tex_templates", desc="TeX templates")
 ctx.lists["user.tex_templates"] = {
     "header": r'''
@@ -222,6 +256,18 @@ ctx.lists["user.tex_templates"] = {
 \includegraphics[width=0.4\textwidth]{}
 \caption{}
 \end{wrapfigure}
+''',
+# ------------------------------------
+    "physics": r'''
+\documentclass[12pt]{article}
+\usepackage{physics}
+\title{FCI Questions}
+\author{Patryk Kozlowski}
+\date{\today} %% Change "\today" by another date manually
+\begin{document}
+\maketitle
+
+\end{document}
 ''',
 # ------------------------------------
     "table": r'''

@@ -1,9 +1,26 @@
-app: lyx
-app: LyX.exe
-app: LyX2.3.exe
-app: LyX for Windows
+app: vscode
+tag: user.cursorless
+title: /\.tex/
 -
 tag(): user.maths
+
+{user.tex_environments} wrap <user.cursorless_target>:
+    user.latex_wrap_with_environment(tex_environments, cursorless_target)
+place <user.cursorless_target> over:
+    user.cursorless_wrap_with_snippet(user.fraction_snippet(), cursorless_target, "numerator")
+place <user.cursorless_target> under:
+    user.cursorless_wrap_with_snippet(user.fraction_snippet(), cursorless_target, "denominator")
+
+<user.big_operator_snippet> wrap <user.cursorless_target>:
+    user.cursorless_wrap_with_snippet(big_operator_snippet, cursorless_target, "body")
+<user.big_operator_snippet>: user.cursorless_insert_snippet(big_operator_snippet)
+
+# Matrices
+[{user.bracket_type}] scaler matrix <number_small> [by <number_small>] wrap <user.cursorless_target>:
+    snippet = user.matrix_snippet(number_small, number_small_2 or number_small, bracket_type or "bmatrix", "scalar")
+    user.cursorless_wrap_with_snippet(snippet, cursorless_target, "constant")
+
+# TODO: Implement the stuff below this line
 
 add matrix row: user.lyx_control_sequence("m", "w i")
 (delete | remove) matrix row: user.lyx_control_sequence("m", "w d")
@@ -22,30 +39,18 @@ absolute: user.lyx_control_sequence("m", "|")
 accent hat: user.lyx_control_sequence("m", "h")
 accent tilde: user.lyx_control_sequence("m", "&")
 accent dot: user.lyx_control_sequence("m", ".")
-accent double dot: user.lyx_control_sequence("m", "\"")
+accent double dot: user.lyx_control_sequence("m", '"')
 accent bar: user.lyx_control_sequence("m", "-")
 accent vector: user.lyx_control_sequence("m", "v")
 
-blank summation: "\\sum "
-summation:
-    insert("\\stackrelthree ")
-    key(down)
-    insert("\\sum ")
-    key(down)
-blank product: "\\prod "
-product:
-    insert("\\stackrelthree ")
-    key(down)
-    insert("\\prod ")
-    key(down)
 blank limit: "\\lim "
 limit:
     insert("\\underset \\lim ")
     key(down)
 label above: "\\overset "
 label below: "\\underset "
-prime: user.maths_superscript("\\prime ")
-degrees: user.maths_superscript("\\degrees ")
+prime: user.maths_superscript("\\prime")
+degrees: user.maths_superscript("\\degrees")
 exponential:
     insert("\\exp ")
     user.lyx_control_sequence("m", "(")
@@ -77,7 +82,7 @@ text bold: "\\mathbf "
 text sans serif: "\\mathsf "
 text italic: "\\mathit "
 text typewriter: "\\mathtt "
-text (beebee|blackboard bold | blackboard): "\\mathbb "
+text (beebee | blackboard bold | blackboard): "\\mathbb "
 
 #
 # Program control
