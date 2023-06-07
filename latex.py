@@ -55,7 +55,7 @@ ctx.lists["user.tex_packages"] = {
     "taboo": "tabu",
     "tabular X": "tabularx",
     "text comp": "textcomp",
-    "three part table X": "threeparttablex",
+    "three part tablex": "threeparttablex",
     "three part table": "threeparttable",
     "title seck": "titlesec",
     "title tock": "titletoc",
