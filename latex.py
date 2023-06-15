@@ -259,6 +259,7 @@ ctx.lists["user.tex_templates"] = {
 \usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage[utf8]{inputenc}
+\usepackage{booktabs}
 \usepackage[style=authoryear]{biblatex}
 \addbibresource{}
 
@@ -310,5 +311,50 @@ ctx.lists["user.tex_templates"] = {
 \end{tabular}
 \caption{}
 \end{table}
+''',
+# ------------------------------------
+    "three part table": r'''
+\begin{table}[h!]
+    \begin{threeparttable}[]
+        \caption{}
+        \label{}
+        \begin{tabularx}{\linewidth}{Xcccc}
+            \toprule
+                      &  &  &  & \\
+            \midrule
+            \tnote{1} &  &  &  & \\
+                      &  &  &  & \\
+            \bottomrule
+        \end{tabularx}
+        \begin{tablenotes}
+            \item [1]
+        \end{tablenotes}
+    \end{threeparttable}
+\end{table}
+''',
+# ------------------------------------
+"three part tablex": r'''
+\begin{ThreePartTable}
+    \begin{TableNotes}
+        \item[a] A note
+        \item[b] Another note
+    \end{TableNotes}
+    \begin{longtable}{l l}
+        \caption{} \label{} \\
+        \toprule
+        Column 1   & Column 2   \\
+        \midrule
+        \endhead
+        \cmidrule{2-2}
+        \multicolumn{2}{r}{\textit{continued}}
+        \endfoot
+        \bottomrule
+        \insertTableNotes
+        \endlastfoot
+        % the contents of the table
+        A          & B\tnote{a} \\
+        C\tnote{b} & D          \\
+    \end{longtable}
+\end{ThreePartTable}
 '''
 }
