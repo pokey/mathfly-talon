@@ -30,6 +30,7 @@ ctx.lists["user.tex_packages"] = {
     "bookmark": "bookmark", 
     "caption": "caption",
     "colour": "color",
+    "comment": "comment",
     "E tool box": "etoolbox",
     "ellipses": "ellipsis",
     "fancy H D R": "fancyhdr",
@@ -76,6 +77,7 @@ ctx.lists["user.tex_environments"] = {
     "columns": "columns",
     # "column"                      = ["column", "{0.5\\textwidth}"]
     "column": "column",
+    "comment": "comment",
     "cases": "cases",
     "display cases": "dcases",
     "definition": "definition",
