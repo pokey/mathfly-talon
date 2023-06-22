@@ -6,7 +6,7 @@ ctx = Context()
 ctx.matches = r"""
 title: /Overleaf/
 title: /\.tex/
-not app: scinoteb.exe
+and not app: scinoteb.exe
 """
 
 mod.list("tex_document_classes", desc="TeX document classes")
