@@ -1,4 +1,4 @@
-title: /.Overleaf./
+title: /Overleaf/
 title: /\.tex/
 not app: scinoteb.exe
 -

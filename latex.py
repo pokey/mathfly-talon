@@ -4,7 +4,7 @@ mod = Module()
 ctx = Context()
 
 ctx.matches = r"""
-title: /.Overleaf./
+title: /Overleaf/
 title: /\.tex/
 not app: scinoteb.exe
 """
