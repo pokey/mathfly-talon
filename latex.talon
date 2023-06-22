@@ -1,6 +1,6 @@
+title: /.Overleaf./
 title: /\.tex/
-and not app: scinoteb.exe
-browser.host: www.overleaf.com
+not app: scinoteb.exe
 -
 document class {user.tex_document_classes}:
     user.cursorless_insert_snippet("\\documentclass{{{tex_document_classes}}}\n")
