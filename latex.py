@@ -296,16 +296,16 @@ ctx.lists["user.tex_templates"] = {
     "figure": r'''
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=1\textwidth]{}
+    \includegraphics[width=1\linewidth]{}
     \caption{}
     \label{}
 \end{figure}
 ''',
 # ------------------------------------
     "wrap figure": r'''
-\begin{wrapfigure}{l}{0.5\textwidth}
+\begin{wrapfigure}{l}{0.5\linewidth}
     \centering
-    \includegraphics[width=0.4\textwidth]{}
+    \includegraphics[width=0.4\linewidth]{}
     \caption{}
     \label{}
 \end{wrapfigure}
