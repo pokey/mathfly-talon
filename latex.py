@@ -293,34 +293,34 @@ ctx.lists["user.tex_templates"] = {
 \end{document}
 ''',
 # ------------------------------------
-    "(graphic | figure)": r'''
+    "figure": r'''
 \begin{figure}[h!]
-\centering
-\label{}
-\includegraphics[width=1\textwidth]{}
-\caption{}
+    \centering
+    \includegraphics[width=1\textwidth]{}
+    \caption{}
+    \label{}
 \end{figure}
 ''',
 # ------------------------------------
-    "figure": r'''
+    "wrap figure": r'''
 \begin{wrapfigure}{l}{0.5\textwidth}
-\centering
-\label{}
-\includegraphics[width=0.4\textwidth]{}
-\caption{}
+    \centering
+    \includegraphics[width=0.4\textwidth]{}
+    \caption{}
+    \label{}
 \end{wrapfigure}
 ''',
 # ------------------------------------
     "table": r'''
 \begin{table}[h!]
-\centering
-\label{}
-\begin{tabular}{ccccc}
-&  &  &  & \\
-\hline
-&  &  &  &  \\
-\end{tabular}
-\caption{}
+    \centering
+    \begin{tabular}{ccccc}
+    &  &  &  & \\
+    \hline
+    &  &  &  &  \\
+    \end{tabular}
+    \caption{}
+    \label{}
 \end{table}
 ''',
 # ------------------------------------
