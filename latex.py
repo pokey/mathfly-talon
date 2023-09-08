@@ -93,6 +93,7 @@ ctx.lists["user.tex_environments"] = {
     "flush right": "flushright",
     "frame": "frame",
     "itemise": "itemize",
+    "landscape": "landscape",
     "mini page": "minipage",
     # "multi (cols | columns)"      = ["multicols", "{2}"]
     "multi line": "multline",
@@ -326,6 +327,7 @@ ctx.lists["user.tex_templates"] = {
 # ------------------------------------
     "three part table": r'''
 \begin{table}[h!]
+    \centering
     \begin{threeparttable}[]
         \caption{}
         \label{}
@@ -350,7 +352,7 @@ ctx.lists["user.tex_templates"] = {
         \item[a] A note
         \item[b] Another note
     \end{TableNotes}
-    \begin{longtable}{l l}
+    \begin{longtable}{lllll}
         \caption{} \label{} \\
         \toprule
         Column 1   & Column 2   \\
