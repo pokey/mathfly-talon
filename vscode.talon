@@ -38,7 +38,7 @@ lay view tab:user.vscode("latex-workshop.tab")
 
 
 #lay [tech] m k: user.vscode("latex-workshop.recipes")
-lay kill: user.vscode("latex-workshop.kill")
+lay (kill | stop): user.vscode("latex-workshop.kill")
 lay dock: user.vscode("latex-workshop.texdoc")
 
 
