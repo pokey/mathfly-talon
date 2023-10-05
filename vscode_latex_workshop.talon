@@ -1,16 +1,8 @@
 app: vscode
 title: /\.tex/
-title: /\.md/
 -
 
 
-# Editing with the ltex extension
-(l | al | lay) fix: 
-    key(ctrl-.)
-(l | al | lay) quick:
-    key(ctrl-.)
-    sleep(30ms)
-    key(enter)
 
 # latex workshop commands
 bar lay [tech]: user.vscode("workbench.view.extension.latex-workshop-activitybar")
@@ -27,9 +19,9 @@ lay (sink | sync) [tack | tech]: user.vscode("latex-workshop.synctex")
 lay math: user.vscode("latex-workshop.toggleMathPreviewPanel")
 
 # View PDF
-lay view [p d f]:user.vscode("latex-workshop.view")
-lay view external:user.vscode("latex-workshop.viewExternal")
-lay view tab:user.vscode("latex-workshop.tab")
+lay view [p d f]: user.vscode("latex-workshop.view")
+lay view external: user.vscode("latex-workshop.viewExternal")
+lay view tab: user.vscode("latex-workshop.tab")
 
 # Bib file
 [lay] bib align: user.vscode("latex-workshop.bibalign")
