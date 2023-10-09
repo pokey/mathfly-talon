@@ -8,8 +8,6 @@ title: /\.tex/
 bar lay [tech]: user.vscode("workbench.view.extension.latex-workshop-activitybar")
 (bar | lay) (command | commands): user.vscode("latex-workshop-commands.focus") 
 (bar | lay) structure: user.vscode("latex-workshop-structure.focus")
-lay math: user.vscode("latex-workshop.toggleMathPreviewPanel")
-
 
 lay (run | build): user.vscode("latex-workshop.build")
 lay clean: user.vscode("latex-workshop.clean")
