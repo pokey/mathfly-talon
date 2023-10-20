@@ -37,23 +37,3 @@ lay dock: user.vscode("latex-workshop.texdoc")
 
 
 
-
-
-
-
-
-
-
-
-
-
-{
-  "key": "ctrl+alt+m",
-  "command": "latex-workshop.toggleMathPreviewPanel",
-  "when": "!config.latex-workshop.bind.altKeymap.enabled && editorLangId =~ /^latex$|^latex-expl3$|^rsweave$|^jlweave$|^pweave$/"
-}
-    {
-        "key": "ctrl+l alt+x",
-        "command": "workbench.view.extension.latex-workshop-activitybar",
-        "when": "config.latex-workshop.bind.altKeymap.enabled"
-      }
