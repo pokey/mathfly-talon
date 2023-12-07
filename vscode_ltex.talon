@@ -1,6 +1,7 @@
 app: vscode
 title: /\.tex/
 title: /\.md/
+title: /\.bib/
 -
 
 
@@ -8,10 +9,9 @@ title: /\.md/
 (l | al) fix: 
     key(ctrl-.)
     
-(l | al) quick:
+(l | al) accept:
     key(ctrl-.)
-    sleep(30ms),?,me
-    
+    sleep(30ms)    
     key(enter)
 
 (l | al) activate:
