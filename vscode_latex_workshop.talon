@@ -1,5 +1,6 @@
 app: vscode
 title: /\.tex/
+title: /\.bib/
 -
 
 
@@ -24,7 +25,7 @@ lay view tab: user.vscode("latex-workshop.tab")
 # Bib file
 [lay] bib align: user.vscode("latex-workshop.bibalign")
 [lay] bib sort: user.vscode("latex-workshop.bibsort")
-[lay] bib (align sort | also): user.vscode("latex-workshop.bibalignsort")
+[lay] bib also: user.vscode("latex-workshop.bibalignsort")
 
 
 #lay [tech] m k: user.vscode("latex-workshop.recipes")

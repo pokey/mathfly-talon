@@ -26,6 +26,7 @@ ctx.lists["user.tex_packages"] = {
     "AMS math": "amsmath",
     "appendix": "appendix",
     "array": "array",
+    # "bib latex"   = ["[style=authoryear]", "biblatex"]
     "BBM": "bbm",
     "book tabs": "booktabs",
     "bookmark": "bookmark", 
@@ -358,13 +359,20 @@ ctx.lists["user.tex_templates"] = {
         \toprule
         Column 1   & Column 2   \\
         \midrule
+        \endfirsthead
+
+        \caption{Continued from previous page.} \\
+        \toprule
         \endhead
+
         \cmidrule{2-2}
         \multicolumn{2}{r}{\textit{continued}}
         \endfoot
+
         \bottomrule
         \insertTableNotes
         \endlastfoot
+        
         % the contents of the table
         A          & B\tnote{a} \\
         C\tnote{b} & D          \\
