@@ -4,6 +4,7 @@ mod = Module()
 ctx = Context()
 
 ctx.matches = r"""
+title: /Overleaf/
 title: /\.tex/
 and not app: scinoteb.exe
 """
@@ -20,18 +21,54 @@ ctx.lists["user.tex_document_classes"] = {
 
 mod.list("tex_packages", desc="TeX packages")
 ctx.lists["user.tex_packages"] = {
+    "adjustbox": "adjust box",
+    "after page": "afterpage",
     "AMS math": "amsmath",
+    "appendix": "appendix",
+    "array": "array",
     # "bib latex"   = ["[style=authoryear]", "biblatex"]
+    "BBM": "bbm",
+    "book tabs": "booktabs",
+    "bookmark": "bookmark", 
+    "caption": "caption",
+    "clever ref": "cleverref",
     "colour": "color",
+    "comment": "comment",
+    "E tool box": "etoolbox",
+    "ellipses": "ellipsis",
+    "fancy H D R": "fancyhdr",
+    "float": "float",
+    "font enc": "fontenc",
     "geometry": "geometry",
-    "hyper ref": "hyperref",
     "graphic X": "graphicx",
-    "math tools": "mathtools",
-    "multi col": "multicol",
+    "hyper ref": "hyperref",
+    "if draft": "ifdraft", 
+    "inputenc": "inputenc",
+    "L modern": "lmodern",
     "long table": "longtable",
+    "math tools": "mathtools",
+    "math tools": "mathtools",
+    "micro type": "microtype",
+    "multi col": "multicol",
+    "nat bib": "natbib",
+    "PDF landscape": "pdflscape",
+    "place ins": "placeins",
+    "rotating": "rotating",
+    "see unit X": "siunitx",
+    "sub caption": "subcaption",
+    "taboo": "tabu",
     "tabular X": "tabularx",
-    "X color": "xcolor",
+    "text comp": "textcomp",
+    "three part tablex": "threeparttablex",
+    "three part table": "threeparttable",
+    "title seck": "titlesec",
+    "title tock": "titletoc",
+    "to do notes": "todonotes",
+    "verbatim": "verbatim",
     "wrap figure": "wrapfig",
+    "X color": "xcolor",
+    "XR": "xr",
+    # "bib latex"   = ["[style=authoryear]", "biblatex"]
 }
 
 mod.list("tex_environments", desc="TeX environments")
@@ -43,6 +80,7 @@ ctx.lists["user.tex_environments"] = {
     "columns": "columns",
     # "column"                      = ["column", "{0.5\\textwidth}"]
     "column": "column",
+    "comment": "comment",
     "cases": "cases",
     "display cases": "dcases",
     "definition": "definition",
@@ -56,6 +94,7 @@ ctx.lists["user.tex_environments"] = {
     "flush right": "flushright",
     "frame": "frame",
     "itemise": "itemize",
+    "landscape": "landscape",
     "mini page": "minipage",
     # "multi (cols | columns)"      = ["multicols", "{2}"]
     "multi line": "multline",
@@ -80,11 +119,21 @@ ctx.lists["user.tex_commands"] = {
     "add bib resource": "addbibresource",
     "caption": "caption",
     "chapter": "chapter",
+    "cite text": "citet",
+    "cite all text": "citet*",
+    "cite paren": "citep",
+    "site paren": "citep",
+    "cite all paren": "citep*",
+    "cite author": "citeauthor",
+    "cite year": "citeyear",
+    "clever ref": "cref",
     "simple citation": "cite",
     "frame title": "frametitle",
     "footnote": "footnote",
     "footnote text": "footnotetext[]",
     "graphics path": "graphicspath",
+    "h space": "hspace",
+    "horizontal space": "hspace",
     "include graphics": "includegraphics[width=1\\textwidth]",
     "label": "label",
     "new command": "newcommand{}[]",
@@ -95,6 +144,7 @@ ctx.lists["user.tex_commands"] = {
     "renew command": "renewcommand",
     "sub paragraph": "subparagraph",
     "section": "section",
+    "multi column": "multicolumn{c}",
     "sub section": "subsection",
     "sub sub section": "subsubsection",
     "text cite": "textcite",
@@ -102,8 +152,12 @@ ctx.lists["user.tex_commands"] = {
     "italics": "textit",
     "slanted": "textsl",
     "emphasis": "emph",
+    "text color":"textcolor{}",
+    "text color blue":"textcolor{blue}",
     "title": "title",
     "use theme": "usetheme",
+    "v space": "vspace",
+    "vertical space": "vspace",
     # Accents
     "accent grave": "`",
     "accent acute": "'",
@@ -120,6 +174,7 @@ ctx.lists["user.tex_commands_noarg"] = {
     "centering": "centering",
     "column": "column{0.5\\textwidth}",
     "footnote mark": "footnotemark[]",
+    "h line": "hline",
     "horizontal line": "hline",
     "lay tech": "LaTeX~ ",
     "line break": "linebreak",
@@ -134,6 +189,7 @@ ctx.lists["user.tex_commands_noarg"] = {
     "text backslash": "textbackslash",
     "text height": "textheight",
     "text width": "textwidth",
+    "v line": "vline",
     "vertical line": "vline",
 }
 
@@ -217,6 +273,7 @@ ctx.lists["user.tex_templates"] = {
 \usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage[utf8]{inputenc}
+\usepackage{booktabs}
 \usepackage[style=authoryear]{biblatex}
 \addbibresource{}
 
@@ -239,34 +296,87 @@ ctx.lists["user.tex_templates"] = {
 \end{document}
 ''',
 # ------------------------------------
-    "(graphic | figure)": r'''
+    "figure": r'''
 \begin{figure}[h!]
-\centering
-\label{}
-\includegraphics[width=1\textwidth]{}
-\caption{}
+    \centering
+    \includegraphics[width=1\linewidth]{}
+    \caption{}
+    \label{}
 \end{figure}
 ''',
 # ------------------------------------
-    "figure": r'''
-\begin{wrapfigure}{l}{0.5\textwidth}
-\centering
-\label{}
-\includegraphics[width=0.4\textwidth]{}
-\caption{}
+    "wrap figure": r'''
+\begin{wrapfigure}{l}{0.5\linewidth}
+    \centering
+    \includegraphics[width=0.4\linewidth]{}
+    \caption{}
+    \label{}
 \end{wrapfigure}
 ''',
 # ------------------------------------
     "table": r'''
 \begin{table}[h!]
-\centering
-\label{}
-\begin{tabular}{ccccc}
-&  &  &  & \\
-\hline
-&  &  &  &  \\
-\end{tabular}
-\caption{}
+    \centering
+    \begin{tabular}{ccccc}
+    &  &  &  & \\
+    \hline
+    &  &  &  &  \\
+    \end{tabular}
+    \caption{}
+    \label{}
 \end{table}
+''',
+# ------------------------------------
+    "three part table": r'''
+\begin{table}[h!]
+    \centering
+    \begin{threeparttable}[]
+        \caption{}
+        \label{}
+        \begin{tabularx}{\linewidth}{Xcccc}
+            \toprule
+                      &  &  &  & \\
+            \midrule
+            \tnote{1} &  &  &  & \\
+                      &  &  &  & \\
+            \bottomrule
+        \end{tabularx}
+        \begin{tablenotes}
+            \item [1]
+        \end{tablenotes}
+    \end{threeparttable}
+\end{table}
+''',
+# ------------------------------------
+"three part tablex": r'''
+\begin{ThreePartTable}
+    \begin{TableNotes}
+        \item[a] A note
+        \item[b] Another note
+    \end{TableNotes}
+    \begin{longtable}{lllll}
+        \caption{} \label{} \\
+        \toprule
+        Column 1   & Column 2   \\
+        \midrule
+        \endfirsthead
+
+        \caption{Continued from previous page.} \\
+        \toprule
+        \endhead
+
+        \cmidrule{2-2}
+        \multicolumn{2}{r}{\textit{continued}}
+        \endfoot
+
+        \bottomrule
+        \insertTableNotes
+        \endlastfoot
+        
+        % the contents of the table
+        A          & B\tnote{a} \\
+        C\tnote{b} & D          \\
+    \end{longtable}
+\end{ThreePartTable}
 '''
 }
