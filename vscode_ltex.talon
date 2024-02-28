@@ -1,3 +1,6 @@
+# Commands to work with the VScode extension LTeX - LanguageTool extension for grammar and spell checking
+# (https://marketplace.visualstudio.com/items?itemName=valentjn.vscode-ltex)
+
 app: vscode
 title: /\.tex/
 title: /\.md/

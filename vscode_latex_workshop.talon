@@ -1,3 +1,5 @@
+# Commands to work with the VScode extension LaTeX Workshop
+# (https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop)
 app: vscode
 title: /\.tex/
 title: /\.bib/
