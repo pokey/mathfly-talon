@@ -143,6 +143,7 @@ ctx.lists["user.tex_commands"] = {
     "renew command": "renewcommand",
     "sub paragraph": "subparagraph",
     "section": "section",
+    "multi column": "multicolumn{c}",
     "sub section": "subsection",
     "sub sub section": "subsubsection",
     "text cite": "textcite",
